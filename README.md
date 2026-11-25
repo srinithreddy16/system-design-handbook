@@ -1,5 +1,58 @@
 # System Design Handbook
 
+```mermaid
+flowchart TD
+    title["System Design Series"]
+
+    subgraph foundations["1 - Foundations"]
+        direction LR
+        what["What is System Design"] --> components["Components"] --> intensive["Data vs Compute Intensive"] --> requirements["Functional & Non-Functional"]
+    end
+
+    subgraph communication["2 - Communication"]
+        direction LR
+        dns["DNS"] --> apis["APIs"] --> rest["REST in Detail"]
+    end
+
+    subgraph data["3 - Data Layer"]
+        direction LR
+        sql["SQL"] --> nosql["NoSQL"] --> cache["Cache"]
+    end
+
+    subgraph scaling["4 - Scaling & Distribution"]
+        direction LR
+        loadBalancer["Load Balancer"] --> replication["Replication"] --> partitioning["Partitioning"] --> cap["CAP Theorem"]
+    end
+
+    subgraph reliability["5 - Reliability & Operations"]
+        direction LR
+        queue["Message Queue"] --> fault["Fault Tolerance"] --> monitoring["Monitoring"]
+    end
+
+    caseStudy["Case Study: Streaming App"]
+
+    title --> what
+    requirements --> dns
+    rest --> sql
+    cache --> loadBalancer
+    cap --> queue
+    monitoring --> caseStudy
+
+    classDef series fill:#f09999,stroke:#5c2a2a,color:#1a1a1a
+    classDef foundation fill:#4f8fe8,stroke:#1e3a5f,color:#ffffff
+    classDef comm fill:#3e9a45,stroke:#1d4a22,color:#ffffff
+    classDef layer fill:#c4922a,stroke:#5c4210,color:#1a1a1a
+    classDef scale fill:#9b6dff,stroke:#3b2770,color:#ffffff
+    classDef ops fill:#e08a45,stroke:#6b3a16,color:#1a1a1a
+
+    class title,caseStudy series
+    class what,components,intensive,requirements foundation
+    class dns,apis,rest comm
+    class sql,nosql,cache layer
+    class loadBalancer,replication,partitioning,cap scale
+    class queue,fault,monitoring ops
+```
+
 - [Introduction](00-introduction.md)
 - [Hello System Design](01-hello-system-design.md)
 - [Designing Alien Bank](02-alien-bank.md)
