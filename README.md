@@ -1,7 +1,7 @@
 # System Design Handbook
 
 ```mermaid
-flowchart TD
+flowchart LR
     title["System Design Series"]
 
     subgraph foundations["1 - Foundations"]
